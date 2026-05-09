@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code-Lert (CodeLert AI 3.0)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              base: 'var(--color-base)',
+              panel: 'var(--color-panel)',
+              header: 'var(--color-header)',
+              hover: 'var(--color-hover)',
+              border: 'var(--color-border)',
+              text: 'var(--color-text)',
+              muted: 'var(--color-muted)',
+              accent: 'var(--color-accent)',
+              accentHover: 'var(--color-accent-hover)',
+            }
+          },
+          fontFamily: {
+            mono: ['"Fira Code"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+    <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Dynamic Custom Cursor using CSS Variables - Scoped for Accessibility */
+    body.custom-cursor-enabled * {
+      cursor: var(--cursor-default, auto) !important;
+    }
+    body.custom-cursor-enabled a, 
+    body.custom-cursor-enabled button, 
+    body.custom-cursor-enabled [role="button"], 
+    body.custom-cursor-enabled input[type="checkbox"], 
+    body.custom-cursor-enabled select, 
+    body.custom-cursor-enabled .cursor-pointer {
+      cursor: var(--cursor-pointer, pointer) !important;
+    }
+    body.custom-cursor-enabled textarea, 
+    body.custom-cursor-enabled input[type="text"], 
+    body.custom-cursor-enabled input[type="email"] {
+      cursor: text !important;
+    }
+    body.custom-cursor-enabled .cursor-ew-resize {
+      cursor: ew-resize !important;
+    }
+    body.custom-cursor-enabled .cursor-ns-resize {
+      cursor: ns-resize !important;
+    }
+
+    /* Disable Animations */
+    body.disable-animations * {
+      transition: none !important;
+      animation: none !important;
+    }
+
+    :root {
+      --color-base: #271814;
+      --color-panel: #3e2723;
+      --color-header: #4e342e;
+      --color-hover: #5d4037;
+      --color-border: #694c41;
+      --color-text: #eaddd7;
+      --color-muted: #d2bab0;
+      --color-accent: #b45309;
+      --color-accent-hover: #d97706;
+    }
+    /* Custom scrollbar for a better IDE feel */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-base); 
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-border); 
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-hover); 
+    }
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: var(--color-base);
+      color: var(--color-text);
+    }
+    
+    /* Compact Markdown Styles with Forced Wrapping */
+    .markdown-body {
+      line-height: 1.4;
+      font-size: 0.95em;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 100%;
+    }
+    .markdown-body pre {
+      white-space: pre-wrap !important;
+      word-wrap: break-word !important;
+      word-break: break-all !important;
+      overflow-x: hidden !important;
+      max-width: 100%;
+    }
+    .markdown-body code {
+      white-space: pre-wrap !important;
+      word-break: break-all !important;
+    }
+    .markdown-body p { margin-bottom: 0.5rem; max-width: 100%; }
+    .markdown-body table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 0.9em;
+      display: block;
+      overflow-x: auto;
+    }
+    .markdown-body th, .markdown-body td {
+      border: 1px solid var(--color-border);
+      padding: 0.4rem 0.6rem;
+    }
+    .markdown-body th {
+      background-color: var(--color-panel);
+      font-weight: bold;
+      color: var(--color-accent);
+    }
+    .markdown-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0.5rem; }
+    .markdown-body ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 0.5rem; }
+    .markdown-body strong { font-weight: bold; color: var(--color-accent); }
+    .markdown-body em { font-style: italic; }
+    .markdown-body u { text-decoration: underline; }
+    .markdown-body img { max-width: 100%; border-radius: 0.5rem; margin: 0.5rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+    .markdown-body h1, .markdown-body h2, .markdown-body h3 { font-weight: bold; margin-top: 1rem; margin-bottom: 0.5rem; color: var(--color-accent); }
+    .markdown-body h1 { font-size: 1.3em; }
+    .markdown-body h2 { font-size: 1.2em; }
+    .markdown-body h3 { font-size: 1.1em; }
+    .markdown-body blockquote { border-left: 3px solid var(--color-accent); padding-left: 0.5rem; color: var(--color-muted); font-style: italic; }
+    
+    .smooth-scroll {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.js"></script></body>
+</html>
